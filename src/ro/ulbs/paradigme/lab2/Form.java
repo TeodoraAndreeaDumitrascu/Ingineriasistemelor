@@ -4,6 +4,7 @@ public class Form {
     private String color;
 
     public Form() {
+        this.color="white"; // initializare culoare cu white
     }
     public Form(String color){
         this.color=color;
