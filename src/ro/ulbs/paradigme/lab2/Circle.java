@@ -1,29 +1,28 @@
 package ro.ulbs.paradigme.lab2;
-
-public class Square extends Form {
-    private float side;
+public class Circle extends Form {
+    private float radius;
 
     // Constructor without parameters
-    public Square() {
+    public Circle() {
         super(); // Call the parent constructor
-        this.side = 0;
+        this.radius = 0;
     }
 
     // Constructor with parameters
-    public Square(float side, String color) {
+    public Circle(float radius, String color) {
         super(color); // Reuse parent constructor code
-        this.side = side;
+        this.radius = radius;
     }
 
-    // Override getArea method to calculate square area
+    // Override getArea method to calculate circle area
     @Override
     public float getArea() {
-        return side * side;
+        return (float) (Math.PI * radius * radius);
     }
 
     // Override toString method using parent's implementation
     @Override
     public String toString() {
-        return super.toString() + ", side = " + side;
+        return super.toString() + ", radius = " + radius;
     }
 }

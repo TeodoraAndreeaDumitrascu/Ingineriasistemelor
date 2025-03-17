@@ -4,10 +4,11 @@ public class Form {
     private String color;
 
     public Form() {
-        this.color="white"; // initializare culoare cu white
+        this.color="white"; // initializare culoare cu white, contructor fara parametrii
+
     }
     public Form(String color){
-        this.color=color;
+        this.color=color;//constructor cu parametrii
     }
     public void setColor(String color){
         this.color=color;
@@ -22,7 +23,4 @@ public class Form {
     @Override
     public String toString(){
         return "This form has the color" + color;
-    }
-}
-
-
+    }}
