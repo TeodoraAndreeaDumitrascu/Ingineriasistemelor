@@ -36,6 +36,15 @@ System.out.println("x="+x);
         zSet.addAll(y);
         zSet.retainAll(y);
         System.out.println(" zSet= "+zSet);
+        //c) xMinusY conţine valorile din şirul x care nu se află în şirul y;
+        xMinusY.addAll(x);
+        xMinusY.removeAll(y);
+        System.out.println(" xMinusY= "+xMinusY);
 
+        //d) xPlusYLimitedByP este mulţimea elementelor din x şi y ce nu depăşesc valoarea p.
+        xPlusYLimitedByP.addAll(x);
+        xPlusYLimitedByP.addAll(y);
+        xPlusYLimitedByP.removeIf(element -> element > p);
+        System.out.println(" xPlusYLimitedByP= "+xPlusYLimitedByP);
     }
 }
