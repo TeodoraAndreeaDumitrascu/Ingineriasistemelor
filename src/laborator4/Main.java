@@ -8,7 +8,7 @@ public class Main {
         List<Integer> x = new ArrayList();
         List<Integer> y = new ArrayList();
         List<Integer> xPlusY = new ArrayList(); //a
-        Set<Integer> zSet = new TreeSet(); //b
+        Set<Integer> zSet = new TreeSet(x); //b
         List<Integer> xMinusY = new ArrayList();//c
         int p = 4;
         List<Integer> xPlusYLimitedByP = new ArrayList(); //d
@@ -30,5 +30,12 @@ System.out.println("x="+x);
         xPlusY.addAll(x);
         xPlusY.addAll(y);
         System.out.println(" xPlusY= "+xPlusY);
+
+        //b) zSet conţine numai valorile comune din ambele şiruri, luate o singură dată;
+        zSet.addAll(x);
+        zSet.addAll(y);
+        zSet.retainAll(y);
+        System.out.println(" zSet= "+zSet);
+
     }
 }
