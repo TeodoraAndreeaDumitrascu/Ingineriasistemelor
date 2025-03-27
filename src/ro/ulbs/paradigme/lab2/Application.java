@@ -2,6 +2,7 @@ package ro.ulbs.paradigme.lab2;
 
 import ro.ulbs.paradigme.lab2.doublechained.DoubleChainedList;
 import ro.ulbs.paradigme.lab2.simplechained.SimpleChainedList;
+import ro.ulbs.paradigme.lab3.util.PasswordMaker;
 
 import static ro.ulbs.paradigme.lab2.simplechained.SimpleChainedList.*;
 
@@ -68,5 +69,30 @@ public class Application {
         // Calculare sumă
         int doubleSum = doubleList.calculateSum();
         System.out.println("Suma valorilor listei duble: " + doubleSum);
+
+        // Demonstrație Singleton cu lazy initialization
+        System.out.println("Demonstrație Singleton cu lazy initialization:");
+
+        // Primul apel la getInstance()
+        PasswordMaker instance1 = PasswordMaker.getInstance();
+        System.out.println("Prima parolă: " + instance1.getPassword());
+
+        // Al doilea apel la getInstance()
+        PasswordMaker instance2 = PasswordMaker.getInstance();
+        System.out.println("A doua parolă: " + instance2.getPassword());
+
+        // Verificăm dacă sunt aceeași instanță
+        System.out.println("Sunt aceeași instanță: " + (instance1 == instance2));
+
+        // Verificăm numărul de accesări
+        System.out.println("Număr de accesări getInstance(): " + PasswordMaker.getInstanceAccessCount());
+
+        // Demonstrație Singleton cu inițializare statică
+        System.out.println("\nDemonstrație Singleton cu inițializare statică:");
+        PasswordMaker staticInstance = PasswordMaker.getStaticInstance();
+        System.out.println("Parolă cu instanța statică: " + staticInstance.getPassword());
+
+        // Verificăm magic string-ul
+        System.out.println("Magic String: " + instance1.getMagicString());
     }
 }
