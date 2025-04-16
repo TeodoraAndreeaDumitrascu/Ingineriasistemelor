@@ -21,6 +21,10 @@ public IntCalculator multiply(int a){
     this.state *= a;
     return this;
 }
+    public IntCalculator divide(int a){
+        this.state /= a;
+        return this;
+    }
 
 public int result() {
     return state;
@@ -31,8 +35,11 @@ public IntCalculator clear() {
     return this;
 }
 public static void main(String[] arg){
-    IntCalculator calculator=new IntCalculator(5);
+    IntCalculator calculator=new IntCalculator(8);
     calculator.add(8).multiply(2);
-    System.out.println(calculator.result());
+    calculator.divide(2);
+    IntCalculator calculator1 = new IntCalculator(10);
+    int result = calculator1.add(5).substract(3).multiply(2).result();
+    System.out.println(calculator1.result());
 }
 }

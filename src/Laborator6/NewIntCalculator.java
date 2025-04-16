@@ -20,6 +20,11 @@ public class NewIntCalculator extends  ACalculator {
         return this;
     }
 
+    public NewIntCalculator divide(int a){
+        this.state=(int)this.state / a;
+        return this;
+    }
+
     @Override
     protected void init() {
         this.state=0;
